@@ -8,13 +8,16 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Small Business - Start Bootstrap Template</title>
+  <title>Creative Kids</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- CDN for Bootstrap core CSS -->
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" type="text/css" /> -->
 
   <!-- Custom styles for this template -->
-  <link href="css/small-business.css" rel="stylesheet">
+  <link href="static/css/small-business.css" rel="stylesheet">
 
 </head>
 
@@ -54,7 +57,7 @@
     <!-- Heading Row -->
     <div class="row align-items-center my-5">
       <div class="col-lg-7">
-        <img class="img-fluid rounded mb-4 mb-lg-0" src="images/main-img.jpg" alt="kid with paint">
+        <img class="img-fluid rounded mb-4 mb-lg-0" src="static/images/main-img.jpg" alt="kid with paint">
       </div>
       <!-- /.col-lg-8 -->
       <div class="col-lg-5">
@@ -74,6 +77,15 @@
     </div>
 
     <!-- Content Row -->
+    
+    {%for activity in activities %}
+    {{activity.name}}
+    {{activity.age_group}}
+    {{activity.duration}}
+    {{activity.details}}
+    {{activity.Equipment}}
+    {% endfor %}
+   
     <div class="row">
       <div class="col-md-4 mb-5">
         <div class="card h-100">
