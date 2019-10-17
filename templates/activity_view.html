@@ -8,9 +8,9 @@
         </div>
     </div>
     <!-- Select Menus -->
-    <select class="custom-select">
+    <select class="custom-select" method="POST">
   <option selected>Open this select menu</option>
-  <option value="1">One</option>
+  <option value="1">{{ages.age_group}}</option>
   <option value="2">Two</option>
   <option value="3">Three</option>
 </select>
@@ -24,44 +24,30 @@
 
     <!-- Cards -->
     <div class="row">
-        <div class="col-6">
-        <div class="card" style="width: 18rem;">
-            <img src="https://images-na.ssl-images-amazon.com/images/I/91TPy6s2TzL._SX425_.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-            </ul>
-            <div class="card-body">
-                <a href="#" class="card-link">Another link</a>
-            </div>
-        </div>
-        </div>
+    {%for activity in activities %}
         
+
         <div class="col-6">
-        <div class="card" style="width: 18rem;">
-            <img src="https://images-na.ssl-images-amazon.com/images/I/91TPy6s2TzL._SX425_.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class="card" style="width: 18rem;">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/91TPy6s2TzL._SX425_.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{activity.activity_name}}</h5>
+                    <p class="card-text accordion"><strong>Details:</strong> {{activity.details}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>Age:</strong> {{activity.age_group}}</li>
+                    <li class="list-group-item"><strong>Duration:</strong> {{activity.activity_duration}}</li>
+                    <li class="list-group-item"><strong>Equipment:</strong> {{activity.equipment}}</li>
+                </ul>
+                <div class="card-body">
+                    <a href="#" class="card-link">Another link</a>
+                </div>
             </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-            </ul>
-            <div class="card-body">
-                <a href="#" class="card-link">Another link</a>
-            </div>
-        </div>
         </div>
 
-        
+    {% endfor %}
     </div>
+    
 </div>
 
 {% endblock %}

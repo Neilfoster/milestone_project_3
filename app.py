@@ -17,8 +17,11 @@ def get_activities():
     
 @app.route('/activity_view')
 def activity_view():
-    return render_template('activity_view.html',activities=mongo.db.Activities.find())
-    
+    return render_template('activity_view.html',activities=mongo.db.Activities.find(), ages=mongo.db.ages.age_group.find())
+ 
+@app.route('/add_activity')
+def add_activity():
+    return render_template('add_activity.html',activities=mongo.db.Activities.find(), ages=mongo.db.ages.age_group.find())
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),
