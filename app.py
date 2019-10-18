@@ -13,7 +13,8 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/home')
 def get_activities():
-    return render_template("home.html", activities=mongo.db.Activities.find())
+    return render_template("home.html", 
+    activities=mongo.db.Activities.find())
     
 @app.route('/activity_view')
 def activity_view():
@@ -21,7 +22,17 @@ def activity_view():
  
 @app.route('/add_activity')
 def add_activity():
-    return render_template('add_activity.html',activities=mongo.db.Activities.find(), ages=mongo.db.ages.age_group.find())
+    return render_template('add_activity.html',
+    ages=mongo.db.ages.find(),
+    duration=mongo.db.duration.find())
+
+@app.route('/insert_activity', methods=['POST'])
+def insert_activity():
+    activities=mongo.db.Activities
+    activities.insert_one(request.form.to_dict())
+    return redirect(url_for('activity_view'))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),
