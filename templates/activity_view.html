@@ -1,38 +1,39 @@
 {% extends "base.html" %} {% block content %}
 <div class="container">
     <!-- heading -->
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid cstm_jumb">
         <div class="container">
             <h1 class="display-4">Look for an activity?</h1>
             <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
         </div>
     </div>
     <!-- Select Menus -->
-    <select class="custom-select" method="POST">
-  <option selected>Open this select menu</option>
-  <option value="1">{{ages.age_group}}</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select>
+    <select class="form-control cstm_select" id="age_group" name="age_group">
+            <option value="" disabled selected>Choose an age group</option>
+               {% for age in ages %}
+            <option value="{{age.age_group.capitalize()}}">{{age.age_group.capitalize()}}</option>
+               {% endfor %}
+    </select>
 
-    <select class="custom-select">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select>
+    <select class="form-control cstm_select" id="age_group" name="age_group">
+            <option value="" disabled selected>Choose an age group</option>
+               {% for age in ages %}
+            <option value="{{age.age_group.capitalize()}}">{{age.age_group.capitalize()}}</option>
+               {% endfor %}
+    </select>
+
+
 
     <!-- Cards -->
     <div class="row">
-    {%for activity in activities %}
-        
+        {%for activity in activities %}
 
-        <div class="col-6">
-            <div class="card" style="width: 18rem;">
+
+        <div class="col-lg-4 col-md-6 col-sm col-xs-12">
+            <div class="card cstm_card accordion" style="width: 18rem;">
                 <img src="https://images-na.ssl-images-amazon.com/images/I/91TPy6s2TzL._SX425_.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">{{activity.activity_name}}</h5>
-                    <p class="card-text accordion"><strong>Details:</strong> {{activity.details}}</p>
+                    <h5 class="card-title"> {{activity.activity_name}} </h5>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"><strong>Age:</strong> {{activity.age_group}}</li>
@@ -40,14 +41,81 @@
                     <li class="list-group-item"><strong>Equipment:</strong> {{activity.equipment}}</li>
                 </ul>
                 <div class="card-body">
-                    <a href="#" class="card-link">Another link</a>
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                          View Details
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div class="card-body">
+                               {{activity.details}}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-    {% endfor %}
+        {% endfor %}
     </div>
-    
+
+
+    <div class="accordion" id="accordionExample">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Collapsible Group Item #1
+        </button>
+                </h2>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                    on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
+                    raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Collapsible Group Item #2
+        </button>
+                </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                    on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
+                    raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Collapsible Group Item #3
+        </button>
+                </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                    on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
+                    raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 </div>
 
 {% endblock %}

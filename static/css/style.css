@@ -1,0 +1,52 @@
+body {
+    background-color: #03cafc;
+    
+}
+
+.forum_text {
+    margin-left: 1%;
+}
+
+.my_button{
+    margin-bottom: 2%;
+}
+
+.cstmnav{
+    background-color: #ffd300;
+    
+}
+
+.cstm_jumb{
+    border: 5px solid #ffd300;
+    border-radius:1%;
+    margin-top: 5%;
+}   
+
+.cstm_select {
+    border: 2px solid #ffd300;
+    border-radius:1%;
+    margin-top:1%;
+    margin-bottom: 1%;
+    
+}
+
+.cstm_card {
+    border: 2px solid #ffd300;
+    border-radius:1%;
+    margin:1%;
+}
+
+.cstm_jumb_home{
+    background-color: #ffd300;
+}
+
+.nav_txt {
+    font-size:2rem;
+    font-family: 'Butterfly Kids', cursive;
+}
+
+.home_title {
+    font-family: 'Butterfly Kids', cursive;
+    font-size:3rem;
+}
+

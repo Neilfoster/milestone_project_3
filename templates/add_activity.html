@@ -11,40 +11,43 @@
     <!--forum -->
     <form action="{{url_for('insert_activity')}}" method="POST">
         <div class="form-group">
-            <i class="fas fa-shapes fa-1x"></i>
-            <label for="acvtivity_name">Activity Name</label>
-            <input type="text" class="form-control" id="acvtivity_name" name="acvtivity_name" placeholder="Enter Text Here">
+            <i class="fas fa-shapes fa-1x "></i>
+            <label class="forum_text" for="activity_name">Activity Name</label>
+            <input type="text" class="form-control" id="activity_name" name="activity_name" placeholder="Enter Text Here" required>
         </div>
         <div class="form-group">
-            <i class="fas fa-baby"></i>
-            <label for="age_group">Age Group</label>
-            <select class="form-control" id="age_group" name="age_group">
+            <i class="fas fa-baby "></i>
+            <label class="forum_text" for="age_group">Age Group</label>
+            <select class="form-control" id="age_group" name="age_group" required>
+               <option value="" disabled selected>Choose an age group</option>
                {% for age in ages %}
-               <option value="{{age.age_group}}">{{age.age_group}}</option>
+               <option value="{{age.age_group.capitalize()}}">{{age.age_group.capitalize()}}</option>
                {% endfor %}
             </select>
         </div>
         <div class="form-group">
-            <i class="fas fa-stopwatch"></i>
-            <label for="exampleFormControlSelect1">Duration</label>
-            <select class="form-control" id="activity_duration" name="activity_duration">
+            <i class="fas fa-stopwatch "></i>
+            <label class="forum_text" for="activity_duration">Duration</label>
+            <select class="form-control" id="activity_duration" name="activity_duration" required>
+                <option value="" disabled selected>Choose Duration</option>
                 {% for duration in durations %}
-                 <option value="{{duration.activity_duration}}">{{duration.activity_duration}}</option>
+                 <option value="{{duration.activity_duration.capitalize()}}">{{duration.activity_duration.capitalize()}}</option>
                 {% endfor %}
             </select>
         </div>
         <div class="form-group">
-            <i class="fas fa-tools"></i>
-            <label for="exampleFormControlInput1">Equipment</label>
-            <input type="text" class="form-control" id="equipment" name="activity_duration" placeholder="Enter Text Here">
+            <i class="fas fa-tools "></i>
+            <label class="forum_text" for="equipment">Equipment</label>
+            <input type="text" class="form-control" id="equipment" name="equipment" placeholder="Enter Text Here" required>
         </div>
 
         <div class="form-group">
-            <i class="far fa-edit"></i>
-            <label for="exampleFormControlTextarea1">Details</label>
-            <textarea class="form-control" id="details" name="details" rows="3"></textarea>
+            <i class="far fa-edit "></i>
+            <label class="forum_text" for="details">Details</label>
+            <textarea class="form-control" id="details" name="details" rows="3" required></textarea>
         </div>
-        <button class="btn btn-primary" type="submit" name="action">Add Activity</button>
+        
+        <button class="btn btn-primary my_button" type="submit" name="action">Add Activity</button>
 </div>
 </form>
 {% endblock %}
