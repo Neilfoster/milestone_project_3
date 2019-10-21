@@ -13,7 +13,6 @@ body {
 
 .cstmnav{
     background-color: #ffd300;
-    
 }
 
 .cstm_jumb{
@@ -27,7 +26,6 @@ body {
     border-radius:1%;
     margin-top:1%;
     margin-bottom: 1%;
-    
 }
 
 .cstm_card {
@@ -50,3 +48,12 @@ body {
     font-size:3rem;
 }
 
+.add_forum {
+     border: 2px solid #ffd300;
+    border-radius:1%;
+}
+
+.add_title {
+    font-family: 'Butterfly Kids', cursive;
+    font-size: 4rem;
+}
