@@ -11,17 +11,16 @@
     <select class="form-control cstm_select" id="age_group" name="age_group">
             <option value="" disabled selected>Choose an age group</option>
                {% for age in ages %}
-            <option value="{{ages.age_group.capitalize()}}">{{ages.age_group.capitalize()}}</option>
+            <option value="{{age.age_group.capitalize()}}">{{age.age_group.capitalize()}}</option>
                {% endfor %}
     </select>
 
-   <!-- <select class="form-control cstm_select" id="activity_duration" name="activity_duration">
-            <option value="" disabled selected>Choose an age group</option>
+    <select class="form-control cstm_select" id="activity_duration" name="activity_duration">
+            <option value="" disabled selected>Choose an duration</option>
                {% for duration in durations %}
-            <option value="{{durations.activity_duration.capitalize()}}">{{durations.activity_duration.capitalize()}}</option>
+            <option value="{{duration.activity_duration.capitalize()}}">{{duration.activity_duration.capitalize()}}</option>
                {% endfor %}
-    </select> -->
-
+    </select>
 
 
     <!-- Cards -->
@@ -36,9 +35,9 @@
                     <h5 class="card-title"> {{activity.activity_name}} </h5>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><strong>Age:</strong> {{activity.age_group}}</li>
-                    <li class="list-group-item"><strong>Duration:</strong> {{activity.activity_duration}}</li>
-                    <li class="list-group-item"><strong>Equipment:</strong> {{activity.equipment}}</li>
+                    <li class="list-group-item"><strong>Age:</strong> {{activity.age_group.capitalize()}}</li>
+                    <li class="list-group-item"><strong>Duration:</strong> {{activity.activity_duration.capitalize()}}</li>
+                    <li class="list-group-item"><strong>Equipment:</strong> {{activity.equipment.capitalize()}}</li>
                 </ul>
                 <div class="card-body">
                     <div class="card">
@@ -51,7 +50,7 @@
                         </div>
                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                             <div class="card-body">
-                               {{activity.details}}
+                                {{activity.details.capitalize()}}
                             </div>
                         </div>
                     </div>

@@ -20,10 +20,10 @@ def get_activities():
 def activity_view():
     return render_template('activity_view.html',
     activities=mongo.db.Activities.find().limit(6), 
-    ages=mongo.db.ages.age_group.find(),
-    duration=mongo.db.duration.find())
+    ages=mongo.db.ages.find(),
+    durations=mongo.db.duration.find())
  
-@app.route('/add_activity')
+@app.route('/add_activity', methods=['POST', 'GET'])
 def add_activity():
     return render_template('add_activity.html',
     ages=mongo.db.ages.find(),
