@@ -11,7 +11,7 @@ app.config["MONGO_URI"] = os.environ.get('mongo_uri')
 mongo = PyMongo(app)
 
 @app.route('/')
-@app.route('/home')
+@app.route('/get_activities')
 def get_activities():
     return render_template("home.html", 
     activities=mongo.db.Activities.find())
@@ -22,7 +22,7 @@ def activity_view():
     activities=mongo.db.Activities.find().limit(6), 
     ages=mongo.db.ages.find(),
     durations=mongo.db.duration.find())
- 
+    
 @app.route('/add_activity', methods=['POST', 'GET'])
 def add_activity():
     return render_template('add_activity.html',

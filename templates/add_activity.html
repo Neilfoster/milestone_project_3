@@ -21,7 +21,7 @@
             <select class="form-control add_forum" id="age_group" name="age_group" required>
                <option value="" disabled selected>Choose an age group</option>
                {% for age in ages %}
-               <option value="{{age.age_group.capitalize()}}">{{age.age_group.capitalize()}}</option>
+               <option value="{{ age.age_group.capitalize() }}">{{age.age_group.capitalize()}}</option>
                {% endfor %}
             </select>
         </div>
