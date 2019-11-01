@@ -16,7 +16,7 @@ def get_activities():
     return render_template("home.html", 
     activities=mongo.db.Activities.find())
     
-@app.route('/activity_view', methods=['POST', 'GET'])
+@app.route('/activity_view', methods=['GET'])
 def activity_view():
     return render_template('activity_view.html',
         #activities=mongo.db.Activities.find().limit(6), 
