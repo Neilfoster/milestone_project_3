@@ -16,19 +16,25 @@ def get_activities():
     return render_template("home.html", 
     activities=mongo.db.Activities.find())
     
-@app.route('/activity_view', methods=['GET'])
+@app.route('/activity_view')
 def activity_view():
-    return render_template('activity_view.html',
-        #activities=mongo.db.Activities.find().limit(6), 
-        ages=mongo.db.ages.find(),
-        durations=mongo.db.duration.find(),
-        user_supplied_age_group = request.GET['age_group'],
-        user_supplied_activity_duration = request.GET['activity_duration'],
-        activities = mongo.db.Activities.find(
-               {'age_group': user_supplied_age_group,
-                 'activity_duration': user_supplied_activity_duration,
-               }))
-   
+    # activities=mongo.db.Activities.find().limit(6)
+
+    ages = mongo.db.ages.find()
+    durations = mongo.db.duration.find()
+
+    user_supplied_age_group = request.form['age_group']
+    user_supplied_activity_duration = request.form['activity_duration']
+
+    
+    activities = mongo.db.Activities.find(
+           {
+            'age_group': user_supplied_age_group,
+            'activity_duration': user_supplied_activity_duration
+           }
+    )
+
+    return render_template('activity_view.html', ages, durations, activities)
     
     
 @app.route('/add_activity', methods=['POST', 'GET'])
