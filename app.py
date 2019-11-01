@@ -16,25 +16,39 @@ def get_activities():
     return render_template("home.html", 
     activities=mongo.db.Activities.find())
     
-@app.route('/activity_view')
+@app.route('/activity_view', methods=['POST', 'GET'])
 def activity_view():
-    # activities=mongo.db.Activities.find().limit(6)
 
     ages = mongo.db.ages.find()
     durations = mongo.db.duration.find()
 
-    user_supplied_age_group = request.form['age_group']
-    user_supplied_activity_duration = request.form['activity_duration']
+    # This will only happen if the user has selected age and duration restrictions
+    if request.method == 'POST':
+        # Should decide what the default is, and assign it here, in case user
+        # submits form without making a choice.
+        # request.form.get('age_group', default_value)
+        
+        user_supplied_age_group = request.args.get('age_group')
+        user_supplied_activity_duration = request.args.get('activity_duration')
 
+        activities = mongo.db.Activities.find(
+               {
+                'age_group': user_supplied_age_group,
+                'activity_duration': user_supplied_activity_duration
+               }
+        )
     
-    activities = mongo.db.Activities.find(
-           {
-            'age_group': user_supplied_age_group,
-            'activity_duration': user_supplied_activity_duration
-           }
-    )
+    # This block gets executed the first time the user comes to the page.
+    else:
+        # Get all activities
+        activities = mongo.db.Activities.find()
 
-    return render_template('activity_view.html', ages, durations, activities)
+
+    # Paginate activities before rendering template
+    # Pagination code here.
+
+
+    return render_template('activity_view.html', ages=ages , durations=durations, activities=activities)
     
     
 @app.route('/add_activity', methods=['POST', 'GET'])
