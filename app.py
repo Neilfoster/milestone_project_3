@@ -28,8 +28,8 @@ def activity_view():
         # submits form without making a choice.
         # request.form.get('age_group', default_value)
         
-        user_supplied_age_group = request.args.get('age_group')
-        user_supplied_activity_duration = request.args.get('activity_duration')
+        user_supplied_age_group = request.form.get('age_group')
+        user_supplied_activity_duration = request.form.get('activity_duration')
 
         activities = mongo.db.Activities.find(
                {
