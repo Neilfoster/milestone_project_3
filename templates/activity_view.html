@@ -32,7 +32,7 @@
         {%for activity in activities %}
         <div class="col-lg-4 col-md-6 col-sm col-xs-12">
             <div class="card cstm_card accordion" id="accordionExample" style="width: 18rem;">
-                <img src="https://images-na.ssl-images-amazon.com/images/I/91TPy6s2TzL._SX425_.jpg" class="card-img-top" alt="...">
+                <img src="{{activity.activity_image}}" class="card-img-top crd_img" alt="...">
                 <div class="card-body">
                     <h5 class="card-title"> {{activity.activity_name}} </h5>
                 </div>
