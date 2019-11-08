@@ -5,6 +5,7 @@ from bson.objectid import ObjectId
 
 app = Flask(__name__)
 
+# ENVIROMENT VARIABLES
 app.config["MONGO_DBNAME"] = 'milestoneproject3me'
 app.config["MONGO_URI"] = os.environ.get('mongo_uri')
 
@@ -13,12 +14,19 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_activities')
 def get_activities():
+    ''' 
+    Route for Landing Page 
+    '''
     return render_template("home.html", 
     activities=mongo.db.Activities.find())
     
+
 @app.route('/activity_view', methods=['POST', 'GET'])
 def activity_view():
-
+    '''
+    Route For Activity page, Allows users to view all actvities,
+    filterted activities and pagination
+    '''
     ages = mongo.db.ages.find()
     durations = mongo.db.duration.find()
 
@@ -74,12 +82,18 @@ def activity_view():
     
 @app.route('/add_activity', methods=['POST', 'GET'])
 def add_activity():
+    '''
+    Route for adding an activity 
+    '''
     return render_template('add_activity.html',
     ages=mongo.db.ages.find(),
     durations=mongo.db.duration.find())
 
 @app.route('/insert_activity', methods=['POST'])
 def insert_activity():
+    '''
+    Route for Activity added
+    '''
     activities=mongo.db.Activities
     activities.insert_one(request.form.to_dict())
     return redirect(url_for('activity_view'))
