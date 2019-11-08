@@ -1,14 +1,16 @@
-         ___        ______     ____ _                 _  ___  
-        / \ \      / / ___|   / ___| | ___  _   _  __| |/ _ \ 
-       / _ \ \ /\ / /\___ \  | |   | |/ _ \| | | |/ _` | (_) |
-      / ___ \ V  V /  ___) | | |___| | (_) | |_| | (_| |\__, |
-     /_/   \_\_/\_/  |____/   \____|_|\___/ \__,_|\__,_|  /_/ 
- ----------------------------------------------------------------- 
-
-
-Hi there! Welcome to AWS Cloud9!
-
-To get started, create some files, play with the terminal,
-or visit https://docs.aws.amazon.com/console/cloud9/ for our documentation.
-
-Happy coding!
+ # Creative Kids
+ 
+ Creative Kids is an app built with Flask And MongoDB.The aim of my project is to
+ use the technologies I have learnt so far to create a simple yet effective app which
+ allows users to create and view activities for kids.
+ 
+ In this project I have used [Python](https://www.python.org/) along with the Python framework 
+ [Flask](https://www.fullstackpython.com/flask.html),[MongoDB](https://www.mongodb.com/)
+ (A document based database) and a css framework [Bootstrap](https://getbootstrap.com/) for
+ layout and styling purposes.
+ 
+ ##UX
+ I wanted to create a simple but much needed app that could benifit parents when they 
+ run out of ideas of how to keep their kids entertained and also to bond with them
+ through play. The app is designed to allow users to create, manage and store ideas all 
+ in one place. 
