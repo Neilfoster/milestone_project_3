@@ -45,7 +45,28 @@ def activity_view():
 
 
     # Paginate activities before rendering template
-    # Pagination code here.
+    activity = mongo.db.Activities
+    
+    offset = 6
+    limit = 6
+    
+    starting_id = activity.find().sort('_id', pymongo.ASCENDING)
+    last_id = starting_id[offset]['_id']
+     
+    activities = activity.find({'_id': {'$gte' : last_id}}).sort('_id', pymongo.ASCENDING).limit(limit)
+    
+    output = []
+    
+    for i in activities:
+        output.append({'activity' : i['activity_name'], 'age group:' : i['age_group'],
+                       'duration' : i['activity_duration'],'details' : i['details'],
+                       'equipment' : i['equipment']})
+        
+    next_url = '/activities?limit=' + str(limit) + '&offset=' + str(offset + limit)
+    prev_url = '/activities?limit=' + str(limit) + '&offset=' + str(offset - limit)
+        
+    return jsonify({'result': output, 'prev_url': prev_url, 'next_url': next_url})
+
 
 
     return render_template('activity_view.html', ages=ages , durations=durations, activities=activities)

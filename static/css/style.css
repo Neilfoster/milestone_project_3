@@ -1,7 +1,16 @@
+/* All Pages */
 body {
     background-color: #03cafc;
-    
 }
+
+.cstm_select {
+    border: 2px solid #ffd300;
+    border-radius:1%;
+    margin-top:1%;
+    margin-bottom: 1%;
+}
+
+/* Add Activity Page */
 
 .forum_text {
     margin-left: 1%;
@@ -11,9 +20,19 @@ body {
     margin-bottom: 2%;
 }
 
-.cstmnav{
-    background-color: #ffd300;
+.cstm_select {
+    border: 2px solid #ffd300;
+    border-radius:1%;
+    margin-top:1%;
+    margin-bottom: 1%;
 }
+
+.add_forum {
+     border: 2px solid #ffd300;
+    border-radius:1%;
+}
+
+/* Activity View Page */
 
 .cstm_jumb{
     border: 5px solid #ffd300;
@@ -21,11 +40,14 @@ body {
     margin-top: 5%;
 }   
 
-.cstm_select {
-    border: 2px solid #ffd300;
-    border-radius:1%;
-    margin-top:1%;
-    margin-bottom: 1%;
+.crd_img {
+    height: 100%;
+    width: 100%;
+}
+
+.add_title {
+    font-family: 'Butterfly Kids', cursive;
+    font-size: 4rem;
 }
 
 .cstm_card {
@@ -34,31 +56,37 @@ body {
     margin:1%;
 }
 
-.cstm_jumb_home{
-    background-color: #ffd300;
-}
-
-.nav_txt {
-    font-size:2rem;
-    font-family: 'Butterfly Kids', cursive;
-}
+/* Home Page */
 
 .home_title {
     font-family: 'Butterfly Kids', cursive;
     font-size:3rem;
 }
 
-.add_forum {
-     border: 2px solid #ffd300;
-    border-radius:1%;
+.cstm_jumb_home{
+    background-color: #ffd300;
 }
 
-.add_title {
+
+/* Base HTML */
+
+.nav_txt {
+    font-size:2rem;
     font-family: 'Butterfly Kids', cursive;
-    font-size: 4rem;
 }
 
-.crd_img {
-    height: 100%;
-    width: 100%;
+.cstmnav{
+    background-color: #ffd300;
 }
+
+
+
+
+
+
+
+
+
+
+
+
