@@ -19,7 +19,9 @@
  
  ## User Stories 
  > As a user I would like to be able to view activities to bond wth my child
+ 
  > I need an app where I can share my ideas for play activities for children
  and be able to access them later. 
+ 
  > I would like to see an app where I can filter through activities by age group and
  lenght to avoid spending time searching through everything. 
