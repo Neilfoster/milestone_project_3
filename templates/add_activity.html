@@ -26,7 +26,7 @@
             <select class="form-control add_forum" id="age_group" name="age_group" required>
                <option value="" disabled selected>Choose an age group</option>
                {% for age in ages %}
-               <option value="{{ age.age_group() }}">{{age.age_group.capitalize()}}</option>
+               <option value="{{ age.age_group()}}">{{age.age_group.capitalize()}}</option>
                {% endfor %}
             </select>
         </div>
@@ -36,9 +36,10 @@
             <select class="form-control add_forum" id="activity_duration" name="activity_duration" required>
                 <option value="" disabled selected>Choose Duration</option>
                 {% for duration in durations %}
-                 <option value="{{duration.activity_duration()}}">{{duration.activity_duration.capitalize()}}</option>
+                <option value="{{duration.activity_duration()}}">{{duration.activity_duration.capitalize()}}</option>
                 {% endfor %}
             </select>
+            
         </div>
         <div class="form-group">
             <i class="fas fa-tools "></i>
