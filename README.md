@@ -48,7 +48,11 @@
  
  ## Things that I could improve
  
- enter text here
+ I would like to evntually set up a login system with user profiles and the ability 
+ to edit activities if they were previously made by the user. I would also 
+ like to implement pagination as the website grows, I tried for this project but
+ i was running out of time and thought it would be better to have a functioning 
+ website than a non functioning one. 
  
  ## Testing
  
@@ -76,16 +80,23 @@
  
  
  ## Rescource Websites used
+ ** Google Images
+ ** Font Awesome 
  
- --Enter text here --
  
  ## Deployment 
- 
- -- Enter text here --
+ Making sure my application was ready for deployment involved the following steps.
+ ** Removing all my passwords and sensitive variables and replaced them with secret keys
+ and variables.
+ ** Making sure the requirements.txt is up to date with all the latest packages.
+ **Setting Flasks debugger to false
+ **Making sure the procfile is inplace as it required by Heroku
+ ** Push all my latest code to GitHub ready for deployment via Heroku
  
   ## Content
   
-  All content was made by myself , I used images from various websit
+  All content was made by myself , I used images from google images for the size
+  of picture I wanted to use. 
  
  
   ## Credits & Acknowledgments
