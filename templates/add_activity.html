@@ -4,7 +4,7 @@
     <div class="jumbotron jumbotron-fluid cstm_jumb">
         <div class="container">
             <h1 class="display-4 add_title"><strong>Add an Activity</strong></h1>
-            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+            <p class="lead">Add an activity, game or idea of your own.</p>
         </div>
     </div>
 
@@ -39,7 +39,7 @@
                 <option value="{{duration.activity_duration}}">{{duration.activity_duration.capitalize()}}</option>
                 {% endfor %}
             </select>
-            
+
         </div>
         <div class="form-group">
             <i class="fas fa-tools "></i>
@@ -52,8 +52,8 @@
             <label class="forum_text" for="details">Details</label>
             <textarea class="form-control add_forum" id="details" name="details" rows="3" required></textarea>
         </div>
-        
+
         <button class="btn btn-primary my_button add_forum" type="submit" name="action">Add Activity</button>
+    </form>
 </div>
-</form>
 {% endblock %}
