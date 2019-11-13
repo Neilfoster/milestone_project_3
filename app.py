@@ -18,7 +18,7 @@ def get_activities():
     Route for Landing Page 
     '''
     return render_template("home.html", 
-    activities=mongo.db.Activities.find())
+                            activities=mongo.db.Activities.find())
     
 
 @app.route('/activity_view', methods=['POST', 'GET'])
@@ -61,8 +61,8 @@ def add_activity():
     Route for adding an activity 
     '''
     return render_template('add_activity.html',
-    ages = mongo.db.ages.find(),
-    durations = mongo.db.duration.find())
+                            ages = mongo.db.ages.find(),
+                            durations = mongo.db.duration.find())
 
 @app.route('/insert_activity', methods=['POST'])
 def insert_activity():
