@@ -80,18 +80,18 @@
  
  
  ## Rescource Websites used
- ** Google Images
- ** Font Awesome 
+ * Google Images
+ * Font Awesome 
  
  
  ## Deployment 
  Making sure my application was ready for deployment involved the following steps.
- ** Removing all my passwords and sensitive variables and replaced them with secret keys
+ * Removing all my passwords and sensitive variables and replaced them with secret keys
  and variables.
- ** Making sure the requirements.txt is up to date with all the latest packages.
- **Setting Flasks debugger to false
- **Making sure the procfile is inplace as it required by Heroku
- ** Push all my latest code to GitHub ready for deployment via Heroku
+ * Making sure the requirements.txt is up to date with all the latest packages.
+ * Setting Flasks debugger to false
+ * Making sure the procfile is inplace as it required by Heroku
+ * Push all my latest code to GitHub ready for deployment via Heroku
  
   ## Content
   
