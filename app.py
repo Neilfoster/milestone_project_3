@@ -4,6 +4,7 @@ from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId
 
 app = Flask(__name__)
+app.secret_key = os.getenv("SECRET")
 
 # ENVIROMENT VARIABLES
 app.config["MONGO_DBNAME"] = 'milestoneproject3me'
@@ -32,10 +33,6 @@ def activity_view():
 
     # This will only happen if the user has selected age and duration restrictions
     if request.method == 'POST':
-        # Should decide what the default is, and assign it here, in case user
-        # submits form without making a choice.
-        # request.form.get('age_group', default_value)
-        
         user_supplied_age_group = request.form.get('age_group')
         user_supplied_activity_duration = request.form.get('activity_duration')
 
@@ -75,7 +72,7 @@ def insert_activity():
 
 
 if __name__ == "__main__":
-    app.run(host=os.environ.get('IP'),
-        port=int(os.environ.get('PORT')),
-        debug=True)
+    app.run(host=os.environ.get('IP', '0.0.0.0'),
+        port=int(os.environ.get('PORT', '5000')),
+        debug=False)
         

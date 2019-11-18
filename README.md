@@ -27,7 +27,8 @@
  lenght to avoid spending time searching through everything. 
  
  ## Wireframes
- [Desktop View](https://www.python.org/)[Mobile View](https://www.python.org/)
+ [Desktop View](https://github.com/Neilfoster/milestone_project_3/tree/master/Docs/desktop_view)
+ [Mobile View](https://github.com/Neilfoster/milestone_project_3/tree/master/Docs/mobile_view)
  
  ## Technology Used
  
