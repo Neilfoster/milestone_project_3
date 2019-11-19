@@ -1,10 +1,10 @@
 /* All Pages */
 body {
-    background-color: #03cafc;
+    background-color: #0089ff4;
 }
 
 .cstm_select {
-    border: 2px solid #ffd300;
+    border: 2px solid #820a84;
     border-radius:1%;
     margin-top:1%;
     margin-bottom: 1%;
@@ -21,21 +21,21 @@ body {
 }
 
 .cstm_select {
-    border: 2px solid #ffd300;
+    border: 2px solid #820a84;
     border-radius:1%;
     margin-top:1%;
     margin-bottom: 1%;
 }
 
 .add_forum {
-     border: 2px solid #ffd300;
+     border: 2px solid #820a84;
     border-radius:1%;
 }
 
 /* Activity View Page */
 
 .cstm_jumb{
-    border: 5px solid #ffd300;
+    border: 5px solid #820a84;
     border-radius:1%;
     margin-top: 5%;
 }   
@@ -51,7 +51,7 @@ body {
 }
 
 .cstm_card {
-    border: 2px solid #ffd300;
+    border: 2px solid #820a84;
     border-radius:1%;
     margin:1%;
 }
@@ -64,7 +64,7 @@ body {
 }
 
 .cstm_jumb_home{
-    background-color: #ffd300;
+    background-color: #820a84;
 }
 
 
@@ -76,11 +76,20 @@ body {
 }
 
 .cstmnav{
-    background-color: #ffd300;
+    background-color: #820a84;
 }
 
+#btstrap-override {
+    color: #000;
+}
 
+#nav-override{
+    color: #000;
+}
 
+#cstm_nav_lnk {
+    color: #000;
+}
 
 
 

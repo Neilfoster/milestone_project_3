@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Creative Kids</title>
+  <title>Treasure Chest</title>
 
   <!-- Bootstrap core CSS -->
   <link href="static/css/bootstrap.min.css" rel="stylesheet">
@@ -32,14 +32,14 @@
 <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top cstmnav">
     <div class="container">
-      <a class="navbar-brand nav_txt" href="{{url_for('get_activities')}}">Creative Kids</a>
+      <a class="navbar-brand nav_txt" id="btstrap-override" href="{{url_for('get_activities')}}">Treasure Chest</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
+      <div class="collapse navbar-collapse" id="navbarResponsive" id="nav-override">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="{{url_for('get_activities')}}">Home
+            <a class="nav-link" id="cstm_nav_lnk" href="{{url_for('get_activities')}}">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
