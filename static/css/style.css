@@ -10,6 +10,7 @@ body {
     margin-bottom: 1%;
 }
 
+
 /* Add Activity Page */
 
 .forum_text {
@@ -71,12 +72,13 @@ body {
 /* Base HTML */
 
 .nav_txt {
-    font-size:2rem;
+    font-size:3rem;
     font-family: 'Butterfly Kids', cursive;
 }
 
 .cstmnav{
     background-color: #820a84;
+    margin-bottom: 1.5rem;
 }
 
 
