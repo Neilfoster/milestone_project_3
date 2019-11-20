@@ -1,8 +1,8 @@
- # Creative Kids
+ # Treasure Chest
  
- Creative Kids is an app built with Flask And MongoDB.The aim of my project is to
+ Treasure Chest is an app built with Flask And MongoDB.The aim of my project is to
  use the technologies I have learnt so far to create a simple yet effective app which
- allows users to create and view activities for kids.
+ allows users to create,view and store activities for kids.
  
  In this project I have used [Python](https://www.python.org/) along with the Python framework 
  [Flask](https://www.fullstackpython.com/flask.html),[MongoDB](https://www.mongodb.com/)
@@ -83,6 +83,7 @@
  ## Rescource Websites used
  * Google Images
  * Font Awesome 
+ * Pexels
  
  
  ## Deployment 
